@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  spring-app:
+    build: .
+    container_name: spring-sqlite
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./meu_banco.db:/app/meu_banco.db  # mapeia o arquivo SQLite para persistência
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlite:/app/meu_banco.db
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.sqlite.JDBC
+      - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.community.dialect.SQLiteDialect
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    restart: unless-stopped
