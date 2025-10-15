@@ -1,33 +1,21 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# --------------------
+# Adições Necessárias para o Seu Projeto
+# --------------------
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# 1. Arquivos de Banco de Dados
+# O arquivo de DB (SQLite) que é persistido na sua máquina local.
+*.db
+*.sqlite
+*.sqlite3
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+# Arquivos de dados específicos (que você já subiu e precisa limpar)
+meu_banco.db
+usuarios.db
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# 2. Arquivos de Log e Temporários
+*.log
+/tmp/
 
-### VS Code ###
-.vscode/
+# 3. Docker (Opcional, mas recomendado para logs e binários)
+# Exclui arquivos de build temporários do Docker (swp)
+*.swp
